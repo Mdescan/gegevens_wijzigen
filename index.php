@@ -16,7 +16,7 @@ and open the template in the editor.
             </li>
         </ul>
         <?php
-            echo "hier kun je kieren om gegevens toe te voegen aan onze database";
+            echo "hier kun je kiezen om gegevens toe te voegen aan onze database";
         ?>
     </body>
 </html>

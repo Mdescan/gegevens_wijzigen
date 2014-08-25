@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <ul class="lijst">
             <li>
-                <a href="http://localhost/Databank_oefeningen/overzicht.php">overzicht</a>
+                <a href="http://localhost/Gegevens_toevoegen/overzicht.php">overzicht</a>
             </li>
         </ul>
         <?php

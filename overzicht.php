@@ -11,7 +11,7 @@
     <body>
         <h1>Modules</h1>
         <?php
-            $modLijst = new moduleLijst();
+            $modLijst = new ModuleLijst();
             $tab = $modLijst->getLijst();
         ?>
         <ul>
@@ -19,7 +19,7 @@
                 foreach ($tab as $module) {
                     $moduleNaam = $module->getNaam();
                     $moduleId = $module->getId();
-                    print("<li>" . $moduleNaam . "(<a href=\"modulebewerken.php?id=". $moduleId . "\">Bewerken</a>) </li>");
+                    print("<li>" . $moduleNaam . "(<a href=\"moduleBewerken.php?id=". $moduleId . "\">Bewerken</a>) </li>");
                 }
             ?>
         </ul>

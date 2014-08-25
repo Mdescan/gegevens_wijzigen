@@ -10,6 +10,11 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <ul class="lijst">
+            <li>
+                <a href="http://localhost/Databank_oefeningen/overzicht.php">overzicht</a>
+            </li>
+        </ul>
         <?php
             echo "hier kun je kieren om gegevens toe te voegen aan onze database";
         ?>

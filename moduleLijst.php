@@ -19,7 +19,7 @@ class ModuleLijst{
         $dbh= new PDO($this->dbConn,  $this->dbUsername, $this->dbPassword);
         $resultSet = $dbh->query($sql);
         foreach($resultSet as $rij){
-            $module = new module($rij["id"],$rij["naam"],$rij["prijs"]);
+            $module = new Module($rij["id"],$rij["naam"],$rij["prijs"]);
             array_push($Lijst, $module);
         }
         $dbh = null;
@@ -27,13 +27,13 @@ class ModuleLijst{
     }
     
     public function getModuleById($id){
-        $sql = "select naam,prijs form modules where id = ".$id;
+        $sql = "select naam,prijs from modules where id = ".$id;
         $dbh= new PDO($this->dbConn,  $this->dbUsername, $this->dbPassword);
         $resultSet = $dbh->query($sql);
         if ($resultSet){
             $rij = $resultSet->fetch();
             if($rij){
-                $module = new module($id,$rij["naam"],$rij["prijs"]);
+                $module = new Module($id,$rij["naam"],$rij["prijs"]);
                 $dbh = null;
                 return $module;
             }else{
@@ -45,8 +45,11 @@ class ModuleLijst{
     }
     
     public function updateModule($module){
-        $sql ="update modules set naam:'".$module->getNaam()."',prijs =".$module->getPrijs()."where id =".$module->getId();
-        $dbh = new PDO($this->dbConn, $this->dbUsername, $this->dbPassword);
+        $sql ="update modules set naam='". $module->getNaam() ."',prijs=". $module->getPrijs() ." where id=". $module->getId();
+        $dbh= new PDO($this->dbConn,  $this->dbUsername, $this->dbPassword);
+        /*echo "ik ben in de update funtie";
+        echo"<br/>";
+        echo "naam: ",$module->getNaam()," , ","prijs: ",$module->getPrijs()," , ","id: ",$module->getID();*/
         $dbh->exec($sql);
         $dbh = null;
     }
